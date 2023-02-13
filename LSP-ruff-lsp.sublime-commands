@@ -1,0 +1,10 @@
+[
+    {
+        "caption": "Preferences: LSP-ruff-lsp Settings",
+        "command": "edit_settings",
+        "args": {
+            "base_file": "${packages}/LSP-ruff-lsp/LSP-ruff-lsp.sublime-settings",
+            "default": "// Settings in here override those in \"LSP-ruff-lsp/LSP-ruff-lsp.sublime-settings\"\n{\n\t$0\n}\n"
+        }
+    }
+]
