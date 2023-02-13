@@ -1,4 +1,4 @@
-# LSP-ruff-lsp
+# LSP-ruff
 
 This is a helper package that automatically installs and updates [ruff-lsp](https://github.com/charliermarsh/ruff-lsp) for you. Ruff is an extremely fast Python linter and code transformation tool, written in Rust.
 
