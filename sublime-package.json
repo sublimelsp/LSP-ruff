@@ -3,10 +3,10 @@
     "settings": [
       {
         "file_patterns": [
-          "/LSP-ruff-lsp.sublime-settings"
+          "/LSP-ruff.sublime-settings"
         ],
         "schema": {
-          "$id": "sublime://settings/LSP-ruff-lsp",
+          "$id": "sublime://settings/LSP-ruff",
           "definitions": {
             "PluginConfig": {
               "properties": {
@@ -58,7 +58,7 @@
               "$ref": "sublime://settings/LSP-plugin-base"
             },
             {
-              "$ref": "sublime://settings/LSP-ruff-lsp#/definitions/PluginConfig"
+              "$ref": "sublime://settings/LSP-ruff#/definitions/PluginConfig"
             },
             {
               "properties": {
@@ -85,8 +85,8 @@
               "properties": {
                 "LSP": {
                   "properties": {
-                    "LSP-ruff-lsp": {
-                      "$ref": "sublime://settings/LSP-ruff-lsp#/definitions/PluginConfig"
+                    "LSP-ruff": {
+                      "$ref": "sublime://settings/LSP-ruff#/definitions/PluginConfig"
                     }
                   }
                 }
