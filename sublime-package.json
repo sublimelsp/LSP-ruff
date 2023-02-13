@@ -95,6 +95,25 @@
           }
         }
       },
+      {
+        "file_patterns": [
+          "LSP.sublime-settings"
+        ],
+        "schema": {
+          "properties": {
+            "lsp_code_actions_on_save": {
+              "properties": {
+                "source.fixAll.ruff": {
+                  "type": "boolean"
+                },
+                "source.organizeImports.ruff": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        }
+      },
     ]
   }
 }
