@@ -10,46 +10,50 @@
           "definitions": {
             "PluginConfig": {
               "properties": {
-                "settings": {
+                "initializationOptions": {
                   "properties": {
-                    "args": {
-                      "type": "array",
-                      "default": [],
-                      "description": "Custom arguments passed to ruff."
-                    },
-                    "logLevel": {
-                      "type": "string",
-                      "default": "error",
-                      "description": "Sets the tracing level for the extension."
-                    },
-                    "path": {
-                      "type": "array",
-                      "default": [],
-                      "description": "Setting to provide custom ruff executables, to try in order."
-                    },
-                    "interpreter": {
-                      "type": "array",
-                      "default": [],
-                      "description": "Path to a Python interpreter to use to run the linter server."
-                    },
-                    "showNotification": {
-                      "type": "string",
-                      "default": "off",
-                      "description": "Setting to control when a notification is shown."
-                    },
-                    "organizeImports": {
-                      "type": "boolean",
-                      "default": true,
-                      "description": "Whether to register Ruff as capable of handling source.organizeImports actions."
-                    },
-                    "fixAll": {
-                      "type": "boolean",
-                      "default": true,
-                      "description": "Whether to register Ruff as capable of handling source.fixAll actions."
+                    "settings": {
+                      "properties": {
+                        "args": {
+                          "type": "array",
+                          "default": [],
+                          "description": "Custom arguments passed to ruff."
+                        },
+                        "logLevel": {
+                          "type": "string",
+                          "default": "error",
+                          "description": "Sets the tracing level for the extension."
+                        },
+                        "path": {
+                          "type": "array",
+                          "default": [],
+                          "description": "Setting to provide custom ruff executables, to try in order."
+                        },
+                        "interpreter": {
+                          "type": "array",
+                          "default": [],
+                          "description": "Path to a Python interpreter to use to run the linter server."
+                        },
+                        "showNotification": {
+                          "type": "string",
+                          "default": "off",
+                          "description": "Setting to control when a notification is shown."
+                        },
+                        "organizeImports": {
+                          "type": "boolean",
+                          "default": true,
+                          "description": "Whether to register Ruff as capable of handling source.organizeImports actions."
+                        },
+                        "fixAll": {
+                          "type": "boolean",
+                          "default": true,
+                          "description": "Whether to register Ruff as capable of handling source.fixAll actions."
+                        },
+                      },
+                      "additionalProperties": false
                     },
                   },
-                  "additionalProperties": false
-                },
+                }
               },
             },
           },
