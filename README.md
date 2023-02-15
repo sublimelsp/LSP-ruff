@@ -17,21 +17,23 @@ There are multiple ways to configure the package and the language server.
 
 - Global configuration: `Preferences > Package Settings > LSP > Servers > LSP-ruff`
 - Project-specific configuration:
-  From the command palette run `Project: Edit Project` and add your settings in:
+  From the Command Palette run `Project: Edit Project` and add your settings in:
 
-  ```js
-  {
-     "settings": {
-        "LSP": {
-           "LSP-ruff": {
-              "settings": {
-                 // Put your settings here
-              }
-           }
-        }
-     }
-  }
-  ```
+	```js
+	{
+		"settings": {
+			"LSP": {
+				"LSP-ruff": {
+					"initializationOptions": {
+						"settings": {
+							// Put your settings here
+						}
+					}
+				}
+			}
+		}
+	}
+	```
 
 ## Code Actions on Save
 
