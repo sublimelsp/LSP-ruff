@@ -11,6 +11,28 @@ To use this package, you must have:
 - For Ubuntu and Debian users, you must also install python3-venv with apt
 - It's recommended to also install the [LSP-json](https://packagecontrol.io/packages/LSP-json) package which will provide auto-completion and validation for this package's settings.
 
+## Configuration
+
+There are multiple ways to configure the package and the language server.
+
+- Global configuration: `Preferences > Package Settings > LSP > Servers > LSP-ruff`
+- Project-specific configuration:
+  From the command palette run `Project: Edit Project` and add your settings in:
+
+  ```js
+  {
+     "settings": {
+        "LSP": {
+           "LSP-ruff": {
+              "settings": {
+                 // Put your settings here
+              }
+           }
+        }
+     }
+  }
+  ```
+
 ## Code Actions on Save
 
 The following "code actions on save" are supported:
