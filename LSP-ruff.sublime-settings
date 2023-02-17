@@ -20,6 +20,11 @@
     "command": [
         "$server_path"
     ],
+    "schemes": [
+        "file", // regular files
+        "buffer", // in-memory buffers
+        "res", // files in .sublime-package archives
+    ],
     // ST4
     "selector": "source.python",
     // ST3
