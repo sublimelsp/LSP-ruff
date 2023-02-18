@@ -17,7 +17,7 @@
                         "args": {
                           "type": "array",
                           "default": [],
-                          "description": "Custom arguments passed to ruff."
+                          "markdownDescription": "Custom arguments passed to ruff. See [ruff documentation](https://github.com/charliermarsh/ruff/blob/main/README.md#configuration)."
                         },
                         "logLevel": {
                           "type": "string",

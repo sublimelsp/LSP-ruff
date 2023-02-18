@@ -2,6 +2,7 @@
     "initializationOptions": {
         "settings": {
             // Custom arguments passed to ruff.
+            // See ruff documentation at https://github.com/charliermarsh/ruff/blob/main/README.md#configuration
             "args": [],
             // Sets the tracing level for the extension.
             "logLevel": "error",
