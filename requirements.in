@@ -1,0 +1,2 @@
+# Use pip-compile from the pip-tools package to generate a "locked" requirements.txt
+ruff-lsp==0.0.19
