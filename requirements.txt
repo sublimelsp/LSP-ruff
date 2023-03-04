@@ -6,4 +6,3 @@ pygls==1.0.1
 ruff==0.0.253
 ruff-lsp==0.0.19
 typeguard==2.13.3
-typing_extensions==4.5.0
