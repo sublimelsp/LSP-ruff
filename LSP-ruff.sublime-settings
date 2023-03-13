@@ -25,6 +25,8 @@
         "file", // regular files
         "buffer", // in-memory buffers
     ],
+    // Enable diagnostics even if the file is not within the project folders.
+    "show_non_project_diagnostics": true,
     // ST4
     "selector": "source.python",
     // ST3
