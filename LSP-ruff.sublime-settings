@@ -17,6 +17,9 @@
             // Whether to register Ruff as capable of handling source.fixAll actions.
             "fixAll": true
         },
+        "globalSettings": {
+            // same as settings
+        },
     },
     "command": [
         "$server_path"

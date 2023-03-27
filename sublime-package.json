@@ -8,54 +8,60 @@
         "schema": {
           "$id": "sublime://settings/LSP-ruff",
           "definitions": {
+            "LspRuffSettings": {
+              "additionalProperties": false,
+              "properties": {
+                "args": {
+                  "type": "array",
+                  "default": [],
+                  "markdownDescription": "Custom arguments passed to ruff. See [ruff documentation](https://github.com/charliermarsh/ruff/blob/main/README.md#configuration)."
+                },
+                "logLevel": {
+                  "type": "string",
+                  "default": "error",
+                  "description": "Sets the tracing level for the extension."
+                },
+                "path": {
+                  "type": "array",
+                  "default": [],
+                  "description": "Setting to provide custom ruff executables, to try in order."
+                },
+                "interpreter": {
+                  "type": "array",
+                  "default": [],
+                  "description": "Path to a Python interpreter to use to run the linter server."
+                },
+                "showNotification": {
+                  "type": "string",
+                  "default": "off",
+                  "description": "Setting to control when a notification is shown."
+                },
+                "organizeImports": {
+                  "type": "boolean",
+                  "default": true,
+                  "description": "Whether to register Ruff as capable of handling source.organizeImports actions."
+                },
+                "fixAll": {
+                  "type": "boolean",
+                  "default": true,
+                  "description": "Whether to register Ruff as capable of handling source.fixAll actions."
+                }
+              },
+            },
             "PluginConfig": {
               "properties": {
                 "initializationOptions": {
                   "properties": {
                     "settings": {
-                      "properties": {
-                        "args": {
-                          "type": "array",
-                          "default": [],
-                          "markdownDescription": "Custom arguments passed to ruff. See [ruff documentation](https://github.com/charliermarsh/ruff/blob/main/README.md#configuration)."
-                        },
-                        "logLevel": {
-                          "type": "string",
-                          "default": "error",
-                          "description": "Sets the tracing level for the extension."
-                        },
-                        "path": {
-                          "type": "array",
-                          "default": [],
-                          "description": "Setting to provide custom ruff executables, to try in order."
-                        },
-                        "interpreter": {
-                          "type": "array",
-                          "default": [],
-                          "description": "Path to a Python interpreter to use to run the linter server."
-                        },
-                        "showNotification": {
-                          "type": "string",
-                          "default": "off",
-                          "description": "Setting to control when a notification is shown."
-                        },
-                        "organizeImports": {
-                          "type": "boolean",
-                          "default": true,
-                          "description": "Whether to register Ruff as capable of handling source.organizeImports actions."
-                        },
-                        "fixAll": {
-                          "type": "boolean",
-                          "default": true,
-                          "description": "Whether to register Ruff as capable of handling source.fixAll actions."
-                        },
-                      },
-                      "additionalProperties": false
+                      "$ref": "sublime://settings/LSP-ruff#/definitions/LspRuffSettings",
                     },
-                  },
+                    "globalSettings": {
+                      "$ref": "sublime://settings/LSP-ruff#/definitions/LspRuffSettings",
+                    }
+                  }
                 }
-              },
-            },
+              }
+            }
           },
           "allOf": [
             {
@@ -64,7 +70,7 @@
             {
               "$ref": "sublime://settings/LSP-ruff#/definitions/PluginConfig"
             }
-          ],
+          ]
         }
       },
       {
@@ -105,7 +111,7 @@
             }
           }
         }
-      },
+      }
     ]
   }
 }
