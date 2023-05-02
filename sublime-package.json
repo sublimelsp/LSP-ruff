@@ -19,6 +19,13 @@
                 "logLevel": {
                   "type": "string",
                   "default": "error",
+                  "enum": [
+                    "error",
+                    "warn",
+                    "info",
+                    "debug",
+                    "off"
+                  ],
                   "description": "Sets the tracing level for the extension."
                 },
                 "path": {
