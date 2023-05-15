@@ -2,7 +2,7 @@ attrs==22.2.0
 cattrs==22.2.0
 lsprotocol==2023.0.0a1
 pygls==1.0.1
-ruff==0.0.264
-ruff-lsp==0.0.25
+ruff==0.0.267
+ruff-lsp==0.0.27
 typeguard==2.13.3
 typing-extensions==4.5.0
