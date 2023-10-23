@@ -11,10 +11,19 @@
             "LspRuffSettings": {
               "additionalProperties": false,
               "properties": {
-                "args": {
+                "lint.args": {
                   "type": "array",
                   "default": [],
                   "markdownDescription": "Custom arguments passed to ruff. See [ruff documentation](https://github.com/charliermarsh/ruff/blob/main/README.md#configuration)."
+                },
+                "lint.run": {
+                  "type": "string",
+                  "default": "onType",
+                  "enum": [
+                    "onType",
+                    "onSave"
+                  ],
+                  "description": "Run Ruff on every keystroke (onType) or on save (onSave)."
                 },
                 "logLevel": {
                   "type": "string",
@@ -52,6 +61,16 @@
                   "type": "boolean",
                   "default": true,
                   "description": "Whether to register Ruff as capable of handling source.fixAll actions."
+                },
+                "codeAction.fixViolation.enable": {
+                  "type": "boolean",
+                  "default": true,
+                  "description": "Whether to display Quick Fix actions to autofix violations."
+                },
+                "codeAction.disableRuleComment.enable": {
+                  "type": "boolean",
+                  "default": true,
+                  "description": "Whether to display Quick Fix actions to disable rules via noqa suppression comments."
                 }
               },
             },

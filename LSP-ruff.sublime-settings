@@ -4,11 +4,13 @@
             // same as globalSettings
         },
         "globalSettings": {
-            // Sets the tracing level for the extension.
-            "logLevel": "error",
             // Custom arguments passed to ruff.
             // See ruff documentation at https://github.com/charliermarsh/ruff/blob/main/README.md#configuration
-            "args": [],
+            "lint.args": [],
+            // Run Ruff on every keystroke (onType) or on save (onSave).
+            "lint.run": "onType",
+            // Sets the tracing level for the extension.
+            "logLevel": "error",
             // Setting to provide custom ruff executables, to try in order.
             "path": [],
             // Path to a Python interpreter to use to run the linter server.
@@ -18,7 +20,11 @@
             // Whether to register Ruff as capable of handling source.organizeImports actions.
             "organizeImports": true,
             // Whether to register Ruff as capable of handling source.fixAll actions.
-            "fixAll": true
+            "fixAll": true,
+            // Whether to display Quick Fix actions to autofix violations.
+            "codeAction.fixViolation.enable": true,
+            // Whether to display Quick Fix actions to disable rules via noqa suppression comments.
+            "codeAction.disableRuleComment.enable": true,
         },
     },
     "command": [
