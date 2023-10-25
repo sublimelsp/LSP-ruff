@@ -9,6 +9,8 @@
             "lint.args": [],
             // Run Ruff on every keystroke (onType) or on save (onSave).
             "lint.run": "onType",
+            // Additional command-line arguments to pass to `ruff format`.
+            "format.args": [],
             // Sets the tracing level for the extension.
             "logLevel": "error",
             // Setting to provide custom ruff executables, to try in order.
