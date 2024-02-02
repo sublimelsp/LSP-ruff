@@ -9,6 +9,8 @@
             "lint.args": [],
             // Run Ruff on every keystroke (onType) or on save (onSave).
             "lint.run": "onType",
+            // Whether to enable linting. Set to false to use Ruff exclusively as a formatter.
+            "lint.enable": true,
             // Additional command-line arguments to pass to `ruff format`.
             "format.args": [],
             // Sets the tracing level for the extension.
@@ -27,6 +29,8 @@
             "codeAction.fixViolation.enable": true,
             // Whether to display Quick Fix actions to disable rules via noqa suppression comments.
             "codeAction.disableRuleComment.enable": true,
+            // Whether to ignore files that are inferred to be part of the Python standard library.
+            "ignoreStandardLibrary": true,
         },
     },
     "command": [
