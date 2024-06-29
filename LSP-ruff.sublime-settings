@@ -34,7 +34,9 @@
         },
     },
     "command": [
-        "$server_path"
+        "$server_path",
+        "server",
+        "--preview"
     ],
     "schemes": [
         "file", // regular files
