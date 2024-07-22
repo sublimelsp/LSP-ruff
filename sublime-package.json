@@ -11,29 +11,77 @@
             "LspRuffSettings": {
               "additionalProperties": false,
               "properties": {
-                "lint.args": {
-                  "type": "array",
-                  "default": [],
-                  "markdownDescription": "Custom arguments passed to ruff. See [ruff documentation](https://github.com/charliermarsh/ruff/blob/main/README.md#configuration)."
+                "configuration": {
+                  "type": ["string", "null"],
+                  "default": null,
+                  "markdownDescription": "Path to a `ruff.toml` or `pyproject.toml` file to use for configuration. By default, Ruff will discover configuration for each project from the filesystem, mirroring the behavior of the Ruff CLI."
+                },
+                "configurationPreference": {
+                  "type": "string",
+                  "default": "editorFirst",
+                  "enum": [
+                    "editorFirst",
+                    "filesystemFirst",
+                    "editorOnly"
+                  ],
+                  "enumDescriptions": [
+                    "Editor settings take priority over configuration files present in the workspace.",
+                    "Configuration files present in the workspace takes priority over editor settings.",
+                    "Ignore configuration files entirely i.e., only use editor settings."
+                  ],
+                  "markdownDescription": "The strategy to use when resolving settings across editor and the filesystem. By default, editor configuration is prioritized over `ruff.toml` and `pyproject.toml` files."
+                },
+                "exclude": {
+                  "type": ["array", "null"],
+                  "default": null,
+                  "items": {
+                    "type": "string"
+                  },
+                  "description": "A list of file patterns to exclude from linting and formatting. See the documentation for more details."
+                },
+                "format.preview": {
+                  "type": ["null", "boolean"],
+                  "default": null,
+                  "description": "Whether to enable Ruff's preview mode when formatting."
                 },
                 "lint.enable": {
                   "type": "boolean",
                   "default": true,
                   "markdownDescription": "Whether to enable linting. Set to false to use Ruff exclusively as a formatter."
                 },
-                "lint.run": {
-                  "type": "string",
-                  "default": "onType",
-                  "enum": [
-                    "onType",
-                    "onSave"
-                  ],
-                  "description": "Run Ruff on every keystroke (onType) or on save (onSave)."
+                "lineLength": {
+                  "type": ["null", "integer"],
+                  "default": null,
+                  "description": "The line length to use for the linter and formatter."
                 },
-                "format.args": {
-                  "type": "array",
-                  "default": [],
-                  "markdownDescription": "Additional command-line arguments to pass to `ruff format`, e.g., `\"args\": [\"--config=/path/to/pyproject.toml\"]`. Supports a subset of Ruff's command-line arguments, ignoring those that are required to operate the LSP, like `--force-exclude` and `--verbose`."
+                "lint.select": {
+                  "type": ["array", "null"],
+                  "default": null,
+                  "items": {
+                    "type": "string"
+                  },
+                  "description": "Rules to enable by default. See the documentation."
+                },
+                "lint.extendSelect": {
+                  "type": ["array", "null"],
+                  "default": null,
+                  "items": {
+                    "type": "string"
+                  },
+                  "markdownDescription": "Rules to enable in addition to those in `lint.select`."
+                },
+                "lint.ignore": {
+                  "type": ["array", "null"],
+                  "default": null,
+                  "items": {
+                    "type": "string"
+                  },
+                  "description": "Rules to disable by default. See the documentation."
+                },
+                "lint.preview": {
+                  "type": ["null", "boolean"],
+                  "default": null,
+                  "description": "Whether to enable Ruff's preview mode when linting."
                 },
                 "logLevel": {
                   "type": "string",
@@ -47,16 +95,6 @@
                   ],
                   "description": "Sets the tracing level for the extension."
                 },
-                "path": {
-                  "type": "array",
-                  "default": [],
-                  "description": "Setting to provide custom ruff executables, to try in order."
-                },
-                "interpreter": {
-                  "type": "array",
-                  "default": [],
-                  "description": "Path to a Python interpreter to use to run the linter server."
-                },
                 "showNotification": {
                   "type": "string",
                   "default": "off",
@@ -65,12 +103,12 @@
                 "organizeImports": {
                   "type": "boolean",
                   "default": true,
-                  "description": "Whether to register Ruff as capable of handling source.organizeImports actions."
+                  "markdownDescription": "Whether to register Ruff as capable of handling `source.organizeImports` actions."
                 },
                 "fixAll": {
                   "type": "boolean",
                   "default": true,
-                  "description": "Whether to register Ruff as capable of handling source.fixAll actions."
+                  "markdownDescription": "Whether to register Ruff as capable of handling `source.fixAll` actions."
                 },
                 "codeAction.fixViolation.enable": {
                   "type": "boolean",
@@ -81,11 +119,6 @@
                   "type": "boolean",
                   "default": true,
                   "description": "Whether to display Quick Fix actions to disable rules via noqa suppression comments."
-                },
-                "ignoreStandardLibrary": {
-                  "type": "boolean",
-                  "default": true,
-                  "description": "Whether to ignore files that are inferred to be part of the Python standard library."
                 }
               },
             },
