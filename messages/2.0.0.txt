@@ -1,0 +1,5 @@
+# BREAKING CHANGE
+
+Some of the options in LSP-ruff settings have been removed/added which can cause old options to no longer work.
+
+See https://docs.astral.sh/ruff/editors/migration/ for more info.
