@@ -128,9 +128,6 @@
                   "properties": {
                     "settings": {
                       "$ref": "sublime://settings/LSP-ruff#/definitions/LspRuffSettings",
-                    },
-                    "globalSettings": {
-                      "$ref": "sublime://settings/LSP-ruff#/definitions/LspRuffSettings",
                     }
                   }
                 }

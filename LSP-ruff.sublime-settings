@@ -1,10 +1,7 @@
 {
     "initializationOptions": {
-        "settings": {
-            // same as globalSettings
-        },
         // See https://docs.astral.sh/ruff/editors/settings/
-        "globalSettings": {
+        "settings": {
             // Path to a ruff.toml or pyproject.toml file to use for configuration.
             // By default, Ruff will discover configuration for each project from the filesystem, mirroring the behavior of the Ruff CLI.
             "configuration": null,
