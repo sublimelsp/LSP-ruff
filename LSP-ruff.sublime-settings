@@ -25,8 +25,6 @@
             "lint.preview": null,
             // Sets the tracing level for the extension.
             "logLevel": "error",
-            // Setting to control when a notification is shown.
-            "showNotification": "off",
             // Whether to register Ruff as capable of handling source.organizeImports actions.
             "organizeImports": true,
             // Whether to register Ruff as capable of handling source.fixAll actions.
