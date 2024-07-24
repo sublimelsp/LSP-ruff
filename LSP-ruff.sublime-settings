@@ -1,10 +1,7 @@
 {
     "initializationOptions": {
-        "settings": {
-            // same as globalSettings
-        },
         // See https://docs.astral.sh/ruff/editors/settings/
-        "globalSettings": {
+        "settings": {
             // Path to a ruff.toml or pyproject.toml file to use for configuration.
             // By default, Ruff will discover configuration for each project from the filesystem, mirroring the behavior of the Ruff CLI.
             "configuration": null,
@@ -28,8 +25,6 @@
             "lint.preview": null,
             // Sets the tracing level for the extension.
             "logLevel": "error",
-            // Setting to control when a notification is shown.
-            "showNotification": "off",
             // Whether to register Ruff as capable of handling source.organizeImports actions.
             "organizeImports": true,
             // Whether to register Ruff as capable of handling source.fixAll actions.

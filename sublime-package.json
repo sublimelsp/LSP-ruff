@@ -98,7 +98,8 @@
                 "showNotification": {
                   "type": "string",
                   "default": "off",
-                  "description": "Setting to control when a notification is shown."
+                  "description": "Setting to control when a notification is shown.",
+                  "deprecationMessage": "This option only works in VS Code."
                 },
                 "organizeImports": {
                   "type": "boolean",
@@ -127,9 +128,6 @@
                 "initializationOptions": {
                   "properties": {
                     "settings": {
-                      "$ref": "sublime://settings/LSP-ruff#/definitions/LspRuffSettings",
-                    },
-                    "globalSettings": {
                       "$ref": "sublime://settings/LSP-ruff#/definitions/LspRuffSettings",
                     }
                   }
