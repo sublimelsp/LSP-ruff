@@ -1,9 +1,6 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:recommended"
-  ],
-  "pyenv": {
-    "enabled": false
-  }
+    "github>sublimelsp/renovate-preset"
+  ]
 }
