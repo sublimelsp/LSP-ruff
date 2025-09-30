@@ -2,8 +2,7 @@
     "initializationOptions": {
         // See https://docs.astral.sh/ruff/editors/settings/
         "settings": {
-            // Path to a ruff.toml or pyproject.toml file to use for configuration.
-            // By default, Ruff will discover configuration for each project from the filesystem, mirroring the behavior of the Ruff CLI.
+            // Configuration overrides for Ruff. See the documentation (https://docs.astral.sh/ruff/editors/settings/#configuration) for more details.
             "configuration": null,
             // The strategy to use when resolving settings across editor and the filesystem. By default, editor configuration is prioritized over ruff.toml and pyproject.toml files.
             "configurationPreference": "editorFirst",
