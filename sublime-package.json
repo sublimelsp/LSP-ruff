@@ -11,7 +11,7 @@
             "LspRuffSettings": {
               "additionalProperties": false,
               "properties": {
-                "configuration": {
+                "settings.configuration": {
                   "default": null,
                   "markdownDescription": "Configuration overrides for Ruff. See [the documentation](https://docs.astral.sh/ruff/editors/settings/#configuration) for more details.",
                   "oneOf": [
@@ -40,7 +40,7 @@
                     }
                   ],
                 },
-                "configurationPreference": {
+                "settings.configurationPreference": {
                   "type": "string",
                   "default": "editorFirst",
                   "enum": [
@@ -55,7 +55,7 @@
                   ],
                   "markdownDescription": "The strategy to use when resolving settings across editor and the filesystem. By default, editor configuration is prioritized over `ruff.toml` and `pyproject.toml` files."
                 },
-                "exclude": {
+                "settings.exclude": {
                   "type": [
                     "array",
                     "null"
@@ -66,7 +66,7 @@
                   },
                   "description": "A list of file patterns to exclude from linting and formatting. See the documentation for more details."
                 },
-                "format.preview": {
+                "settings.format.preview": {
                   "type": [
                     "null",
                     "boolean"
@@ -74,12 +74,12 @@
                   "default": null,
                   "description": "Whether to enable Ruff's preview mode when formatting."
                 },
-                "lint.enable": {
+                "settings.lint.enable": {
                   "type": "boolean",
                   "default": true,
                   "markdownDescription": "Whether to enable linting. Set to false to use Ruff exclusively as a formatter."
                 },
-                "lineLength": {
+                "settings.lineLength": {
                   "type": [
                     "null",
                     "integer"
@@ -87,7 +87,7 @@
                   "default": null,
                   "description": "The line length to use for the linter and formatter."
                 },
-                "lint.select": {
+                "settings.lint.select": {
                   "type": [
                     "array",
                     "null"
@@ -98,7 +98,7 @@
                   },
                   "description": "Rules to enable by default. See the documentation."
                 },
-                "lint.extendSelect": {
+                "settings.lint.extendSelect": {
                   "type": [
                     "array",
                     "null"
@@ -109,7 +109,7 @@
                   },
                   "markdownDescription": "Rules to enable in addition to those in `lint.select`."
                 },
-                "lint.ignore": {
+                "settings.lint.ignore": {
                   "type": [
                     "array",
                     "null"
@@ -120,7 +120,7 @@
                   },
                   "description": "Rules to disable by default. See the documentation."
                 },
-                "lint.preview": {
+                "settings.lint.preview": {
                   "type": [
                     "null",
                     "boolean"
@@ -128,7 +128,7 @@
                   "default": null,
                   "description": "Whether to enable Ruff's preview mode when linting."
                 },
-                "logLevel": {
+                "settings.logLevel": {
                   "type": "string",
                   "default": "error",
                   "enum": [
@@ -140,28 +140,28 @@
                   ],
                   "description": "Sets the tracing level for the extension."
                 },
-                "showNotification": {
+                "settings.showNotification": {
                   "type": "string",
                   "default": "off",
                   "description": "Setting to control when a notification is shown.",
                   "deprecationMessage": "This option only works in VS Code."
                 },
-                "organizeImports": {
+                "settings.organizeImports": {
                   "type": "boolean",
                   "default": true,
                   "markdownDescription": "Whether to register Ruff as capable of handling `source.organizeImports` actions."
                 },
-                "fixAll": {
+                "settings.fixAll": {
                   "type": "boolean",
                   "default": true,
                   "markdownDescription": "Whether to register Ruff as capable of handling `source.fixAll` actions."
                 },
-                "codeAction.fixViolation.enable": {
+                "settings.codeAction.fixViolation.enable": {
                   "type": "boolean",
                   "default": true,
                   "description": "Whether to display Quick Fix actions to autofix violations."
                 },
-                "codeAction.disableRuleComment.enable": {
+                "settings.codeAction.disableRuleComment.enable": {
                   "type": "boolean",
                   "default": true,
                   "description": "Whether to display Quick Fix actions to disable rules via noqa suppression comments."
@@ -171,11 +171,7 @@
             "PluginConfig": {
               "properties": {
                 "initializationOptions": {
-                  "properties": {
-                    "settings": {
-                      "$ref": "sublime://settings/LSP-ruff#/definitions/LspRuffSettings",
-                    }
-                  }
+                  "$ref": "sublime://settings/LSP-ruff#/definitions/LspRuffSettings",
                 }
               }
             }

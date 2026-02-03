@@ -1,14 +1,17 @@
+from __future__ import annotations
+from typing import final, override
 from lsp_utils.pip_client_handler import PipClientHandler
-
 import sublime
 
 
+@final
 class RuffLsp(PipClientHandler):
-    package_name = __package__
+    package_name = str(__package__)
     requirements_txt_path = "requirements.txt"
     server_filename = "ruff"
 
     @classmethod
+    @override
     def should_ignore(cls, view: sublime.View) -> bool:
         return bool(
             # REPL views (https://github.com/sublimelsp/LSP-pyright/issues/343)

@@ -1,38 +1,36 @@
 {
+    // See https://docs.astral.sh/ruff/editors/settings/
     "initializationOptions": {
-        // See https://docs.astral.sh/ruff/editors/settings/
-        "settings": {
-            // Configuration overrides for Ruff. See the documentation (https://docs.astral.sh/ruff/editors/settings/#configuration) for more details.
-            "configuration": null,
-            // The strategy to use when resolving settings across editor and the filesystem. By default, editor configuration is prioritized over ruff.toml and pyproject.toml files.
-            "configurationPreference": "editorFirst",
-            // A list of file patterns to exclude from linting and formatting. See the documentation for more details.
-            "exclude": null,
-            // Whether to enable Ruff's preview mode when formatting.
-            "format.preview": null,
-            // The line length to use for the linter and formatter.
-            "lineLength": null,
-            // Whether to enable linting. Set to false to use Ruff exclusively as a formatter.
-            "lint.enable": true,
-            // Rules to enable by default. See the documentation.
-            "lint.select": null,
-            // Rules to enable in addition to those in lint.select.
-            "lint.extendSelect": null,
-            // Rules to disable by default. See the documentation.
-            "lint.ignore": null,
-            // Whether to enable Ruff's preview mode when linting.
-            "lint.preview": null,
-            // Sets the tracing level for the extension.
-            "logLevel": "error",
-            // Whether to register Ruff as capable of handling source.organizeImports actions.
-            "organizeImports": true,
-            // Whether to register Ruff as capable of handling source.fixAll actions.
-            "fixAll": true,
-            // Whether to display Quick Fix actions to autofix violations.
-            "codeAction.fixViolation.enable": true,
-            // Whether to display Quick Fix actions to disable rules via noqa suppression comments.
-            "codeAction.disableRuleComment.enable": true,
-        },
+        // Configuration overrides for Ruff. See the documentation (https://docs.astral.sh/ruff/editors/settings/#configuration) for more details.
+        "settings.configuration": null,
+        // The strategy to use when resolving settings across editor and the filesystem. By default, editor configuration is prioritized over ruff.toml and pyproject.toml files.
+        "settings.configurationPreference": "editorFirst",
+        // A list of file patterns to exclude from linting and formatting. See the documentation for more details.
+        "settings.exclude": null,
+        // Whether to enable Ruff's preview mode when formatting.
+        "settings.format.preview": null,
+        // The line length to use for the linter and formatter.
+        "settings.lineLength": null,
+        // Whether to enable linting. Set to false to use Ruff exclusively as a formatter.
+        "settings.lint.enable": true,
+        // Rules to enable by default. See the documentation.
+        "settings.lint.select": null,
+        // Rules to enable in addition to those in lint.select.
+        "settings.lint.extendSelect": null,
+        // Rules to disable by default. See the documentation.
+        "settings.lint.ignore": null,
+        // Whether to enable Ruff's preview mode when linting.
+        "settings.lint.preview": null,
+        // Sets the tracing level for the extension.
+        "settings.logLevel": "error",
+        // Whether to register Ruff as capable of handling source.organizeImports actions.
+        "settings.organizeImports": true,
+        // Whether to register Ruff as capable of handling source.fixAll actions.
+        "settings.fixAll": true,
+        // Whether to display Quick Fix actions to autofix violations.
+        "settings.codeAction.fixViolation.enable": true,
+        // Whether to display Quick Fix actions to disable rules via noqa suppression comments.
+        "settings.codeAction.disableRuleComment.enable": true,
     },
     "command": [
         "$server_path",
