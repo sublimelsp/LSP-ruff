@@ -25,9 +25,7 @@ There are multiple ways to configure the package and the language server.
 			"LSP": {
 				"LSP-ruff": {
 					"initializationOptions": {
-						"settings": {
-							// Put your settings here
-						}
+						// Put your settings here
 					}
 				}
 			}
