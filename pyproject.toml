@@ -1,5 +1,6 @@
 [tool.ruff]
-line-length = 88
+line-length = 120
+target-version = "py38"
 
 [tool.ruff.lint]
 ignore = []
@@ -8,3 +9,6 @@ select = [
     "F",
     "W",
 ]
+
+[tool.pyright]
+pythonVersion = "3.8"

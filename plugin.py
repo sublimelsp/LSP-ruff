@@ -1,6 +1,7 @@
 from __future__ import annotations
 from lsp_utils.pip_client_handler import PipClientHandler
-from typing import final, override
+from typing import final
+from typing_extensions import override
 import sublime
 
 
