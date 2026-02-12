@@ -43,7 +43,7 @@ class RuffLsp(GenericClientHandler):
         variables = super().get_additional_variables()
         if cls.uv_venv_manager:
             variables.update({
-                'managed_ruff_path': str(cls.uv_venv_manager.venv_bin_path / 'ruff')
+                'server_path': str(cls.uv_venv_manager.venv_bin_path / 'ruff')
             })
         return variables
 
