@@ -19,8 +19,6 @@ class RuffLsp(GenericClientHandler):
             super().is_applicable(view, config)
             # REPL views (https://github.com/sublimelsp/LSP-pyright/issues/343)
             and not view.settings().get("repl")
-            # Python-like syntax test files
-            and not view.substr(sublime.Region(0, 20)).startswith("# SYNTAX TEST ")
         )
 
     @classmethod
