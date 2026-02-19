@@ -1,3 +1,10 @@
+[project]
+name = "lsp-ruff"
+version = "1.0"
+dependencies = [
+    "ruff==0.15.0",
+]
+
 [tool.ruff]
 line-length = 120
 target-version = "py38"
