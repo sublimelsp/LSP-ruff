@@ -1,6 +1,8 @@
 from __future__ import annotations
+
 from LSP.plugin import ClientConfig
-from lsp_utils import GenericClientHandler, UvVenvManager
+from lsp_utils import GenericClientHandler
+from lsp_utils import UvVenvManager
 from pathlib import Path
 from typing import final
 from typing_extensions import override
@@ -44,6 +46,13 @@ class RuffLsp(GenericClientHandler):
                 'server_path': str(cls.uv_venv_manager.venv_bin_path / 'ruff')
             })
         return variables
+
+    @classmethod
+    @override
+    def get_additional_paths(cls) -> list[str]:
+        if uv_venv_manager := cls.uv_venv_manager:
+            return [str(uv_venv_manager.venv_bin_path)]
+        return []
 
 
 def plugin_loaded() -> None:
