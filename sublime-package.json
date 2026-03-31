@@ -170,7 +170,7 @@
             },
             "PluginConfig": {
               "properties": {
-                "initializationOptions": {
+                "initialization_options": {
                   "$ref": "sublime://settings/LSP-ruff#/definitions/LspRuffSettings",
                 }
               }
