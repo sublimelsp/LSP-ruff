@@ -15,7 +15,6 @@ select = [
     "E",
     "F",
     "W",
-    "F401",
     "I",
 ]
 preview = true
