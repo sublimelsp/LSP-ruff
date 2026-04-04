@@ -2,7 +2,7 @@
 name = "lsp-ruff"
 version = "1.0"
 dependencies = [
-    "ruff==0.15.8",
+    "ruff==0.15.9",
 ]
 
 [tool.ruff]
