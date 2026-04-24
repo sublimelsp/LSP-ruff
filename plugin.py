@@ -47,6 +47,13 @@ class RuffLsp(GenericClientHandler):
             })
         return variables
 
+    @classmethod
+    @override
+    def get_additional_paths(cls) -> list[str]:
+        if uv_venv_manager := cls.uv_venv_manager:
+            return [str(uv_venv_manager.venv_bin_path)]
+        return []
+
 
 def plugin_loaded() -> None:
     RuffLsp.setup()
