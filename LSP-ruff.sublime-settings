@@ -1,4 +1,10 @@
 {
+    // The path to the server binary to use for starting the language server.
+    // Use `auto` for the package to manage (install/update) server automatically.
+    // NOTE: Change this instead of directly updating `command` - the `${server_path}` variable is dynamically resolved
+    // based on this setting.
+    // WARNING: Using custom binary could result in package settings not matching what server supports.
+    "server_path": "auto",
     // See https://docs.astral.sh/ruff/editors/settings/
     "initialization_options": {
         // Configuration overrides for Ruff. See the documentation (https://docs.astral.sh/ruff/editors/settings/#configuration) for more details.
@@ -33,7 +39,7 @@
         "settings.codeAction.disableRuleComment.enable": true,
     },
     "command": [
-        "$server_path",
+        "${server_path}",
         "server"
     ],
     "schemes": [
