@@ -1,56 +1,27 @@
 from __future__ import annotations
 
-from LSP.plugin import ClientConfig
-from lsp_utils import GenericClientHandler
+from LSP.plugin import LspPlugin
+from LSP.plugin import OnPreStartContext
 from lsp_utils import UvVenvManager
-from pathlib import Path
+from sublime_lib import ResourcePath
 from typing import final
 from typing_extensions import override
-import sublime
 
 
 @final
-class RuffLsp(GenericClientHandler):
-    package_name = str(__package__)
-    uv_venv_manager: UvVenvManager | None = None
+class RuffLsp(LspPlugin):
 
     @classmethod
     @override
-    def is_applicable(cls, view: sublime.View, config: ClientConfig) -> bool:
-        return bool(
-            super().is_applicable(view, config)
-            # REPL views (https://github.com/sublimelsp/LSP-pyright/issues/343)
-            and not view.settings().get("repl")
-        )
-
-    @classmethod
-    @override
-    def needs_update_or_installation(cls) -> bool:
-        if not cls.uv_venv_manager:
-            cls.uv_venv_manager = UvVenvManager(cls.package_name, 'pyproject.toml', Path(cls.storage_path()))
-        return cls.uv_venv_manager.needs_install_or_update()
-
-    @classmethod
-    @override
-    def install_or_update(cls) -> None:
-        if not cls.uv_venv_manager:
-            raise Exception('Expected UvVenvManager to be initialized')
-        cls.uv_venv_manager.install()
-
-    @classmethod
-    @override
-    def get_additional_variables(cls) -> dict[str, str]:
-        variables = super().get_additional_variables()
-        if cls.uv_venv_manager:
-            variables.update({
-                'server_path': str(cls.uv_venv_manager.venv_bin_path / 'ruff')
-            })
-        return variables
+    def on_pre_start_async(cls, context: OnPreStartContext) -> None:
+        package_name = cls.plugin_storage_path.name
+        UvVenvManager.on_pre_start_async(
+            context, cls.plugin_storage_path, ResourcePath('Packages', package_name), 'ruff')
 
 
 def plugin_loaded() -> None:
-    RuffLsp.setup()
+    RuffLsp.register()
 
 
 def plugin_unloaded() -> None:
-    RuffLsp.cleanup()
+    RuffLsp.unregister()
