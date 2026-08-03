@@ -16,8 +16,8 @@ class RuffLsp(LspPlugin):
     @override
     def on_pre_start_async(cls, context: OnPreStartContext) -> None:
         package_name = cls.plugin_storage_path.name
-        if not context.workspace_folders:
-            context.working_directory = os.path.dirname(context.view.file_name())
+        if not context.working_directory and (file_name := context.view.file_name()):
+            context.working_directory = os.path.dirname(file_name)
         UvVenvManager.on_pre_start_async(
             context, cls.plugin_storage_path, ResourcePath('Packages', package_name), 'ruff')
 
