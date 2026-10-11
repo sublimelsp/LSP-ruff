@@ -18,7 +18,6 @@ class RuffLsp(LspPlugin):
     def is_applicable_async(cls, context: IsApplicableContext) -> bool:
         if super().is_applicable_async(context):
             return True
-        # Ruff also lints its configuration in pyproject.toml files.
         file_name = context.view.file_name()
         return bool(file_name) and Path(file_name).name == 'pyproject.toml'
 
