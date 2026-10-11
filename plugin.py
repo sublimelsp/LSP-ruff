@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from LSP.plugin import IsApplicableContext
 from LSP.plugin import LspPlugin
 from LSP.plugin import OnPreStartContext
 from lsp_utils import UvVenvManager
@@ -11,6 +12,14 @@ from typing_extensions import override
 
 @final
 class RuffLsp(LspPlugin):
+
+    @classmethod
+    @override
+    def is_applicable_async(cls, context: IsApplicableContext) -> bool:
+        if super().is_applicable_async(context):
+            return True
+        file_name = context.view.file_name()
+        return bool(file_name) and Path(file_name).name == 'pyproject.toml'
 
     @classmethod
     @override
