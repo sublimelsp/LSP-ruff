@@ -3,10 +3,10 @@ from __future__ import annotations
 from LSP.plugin import LspPlugin
 from LSP.plugin import OnPreStartContext
 from lsp_utils import UvVenvManager
+from pathlib import Path
 from sublime_lib import ResourcePath
 from typing import final
 from typing_extensions import override
-import os
 
 
 @final
@@ -21,7 +21,7 @@ class RuffLsp(LspPlugin):
         # breaks some features. Start the server next to the opened file instead.
         # Remove once fixed upstream: https://github.com/astral-sh/ruff/issues/26182
         if not context.working_directory and (file_name := context.view.file_name()):
-            context.working_directory = os.path.dirname(file_name)
+            context.working_directory = str(Path(file_name).parent)
         UvVenvManager.on_pre_start_async(
             context, cls.plugin_storage_path, ResourcePath('Packages', package_name), 'ruff')
 
