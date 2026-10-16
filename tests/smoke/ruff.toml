@@ -1,0 +1,3 @@
+# Only enable the rule that the smoke test expects, so the result doesn't depend on ruff's defaults.
+[lint]
+select = ["F401"]
