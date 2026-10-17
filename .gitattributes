@@ -1,1 +1,6 @@
+/.gitattributes export-ignore
+/.github/ export-ignore
+/pyproject.toml export-ignore
 renovate.json export-ignore
+/tests/ export-ignore
+/uv.lock export-ignore
