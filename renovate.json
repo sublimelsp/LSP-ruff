@@ -2,6 +2,6 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "github>sublimelsp/renovate-preset",
-    ":semanticCommitTypeAll(fix)"
+    "github>sublimelsp/renovate-preset:automerge-server"
   ]
 }
