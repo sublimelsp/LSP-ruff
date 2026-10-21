@@ -32,7 +32,7 @@ class RuffLsp(LspPlugin):
         if not context.working_directory and (file_name := context.view.file_name()):
             context.working_directory = str(Path(file_name).parent)
         UvVenvManager.on_pre_start_async(
-            context, cls.plugin_storage_path, ResourcePath('Packages', package_name), 'ruff')
+            context, cls.plugin_storage_path, ResourcePath('Packages', package_name, 'server'), 'ruff')
 
 
 def plugin_loaded() -> None:

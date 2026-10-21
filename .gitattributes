@@ -1,3 +1,5 @@
+# Leave out of the package the files that are only used for development. The patterns are anchored to the root,
+# since server/ has its own pyproject.toml and uv.lock, which the package needs.
 /.gitattributes export-ignore
 /.github/ export-ignore
 /pyproject.toml export-ignore
