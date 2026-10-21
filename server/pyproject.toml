@@ -3,5 +3,5 @@ name = "lsp-ruff"
 version = "1.0"
 requires-python = ">=3.8"
 dependencies = [
-    "ruff==0.17.0",
+    "ruff==0.17.1",
 ]
